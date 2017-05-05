@@ -89,7 +89,7 @@ ul, li, p, img {
     background: linear-gradient(white, grey);
 }
 
-#menu.hide {
+#menu.hide { /*The hide class is added by JS only*/
     display: none;
 }
 
@@ -129,7 +129,7 @@ ul, li, p, img {
     }
 
     #menu.hide {
-        display: block;
+        display: block; /* Always display menu on large views */
     }
 
     #menu ul li {
@@ -154,6 +154,7 @@ ul, li, p, img {
         height: 2em;
     }
 }
+
 /*Content*/
 
 #main-image {
@@ -162,7 +163,7 @@ ul, li, p, img {
     display: block;
 }
 
-#main-image.hide {
+#main-image.hide { /*The hide class is added by JS only*/
     display: none
 }
 
@@ -222,8 +223,9 @@ section {
 }
 
 @media only screen and (min-width: 768px){
-    body { margin: 0 1em; } /*add side margins for desktop*/
+    body { margin: 0 1em; } /* add side margins for desktop */
     section { padding: 0 1.8em;}
+
     #main-content { 
         clear: both;
         width: 70%;
@@ -250,16 +252,17 @@ section {
         width: 49%;
         display: inline-block;
     }
+
     #main-content img:first-of-type {
         margin-right: 2%;
     }
 }
 
+/*Footer*/
+
 .clear {
     clear: both;
 }
-
-/*Footer*/
 
 footer {
     background-color: grey;
@@ -290,5 +293,3 @@ footer a {
 footer a:hover, footer a:active {
     color: lightgrey;
 }
-
-
