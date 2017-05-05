@@ -1,3 +1,5 @@
+/*Global*/
+
 body {
     margin: 0;
     padding: 0;
@@ -21,7 +23,6 @@ h3 {
 
 a {
     text-decoration: none;
-    color: grey; 
 }
 
 ul, li, p, img {
@@ -54,33 +55,38 @@ ul, li, p, img {
     font-weight: lighter;
 
     /*text fade snippet from https://tinyurl.com/op6t4cz*/
-    background: -webkit-linear-gradient(#eee, #333);
+    background: -webkit-linear-gradient(lightgrey, black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 #menu-button {
     display: none; /*display only if JS enabled*/
-    background-color: white;
+    border-radius: 0.3em;
     border: none;
     outline: none;
+    color: grey;
+    background: white;
+
+    margin: 0.3em;
+    padding: 0 0.3em;
     font-size: 2em;
     float: right;
-    padding: 0 0.3em;
     line-height: 1.5em;
+
     height: 1.5em;
     cursor: pointer;
 }
 
-#menu-button:hover {
-    color: #1c1c1c;
-    background: #ccc;
+#menu-button:hover, #menu-button:active {
+    background: lightgrey;
+    color: white;
 }
 
 #separator {
-    height: 1em;
+    height: 1.2em;
     clear: both;
-    background: linear-gradient(white, lightgrey);
+    background: linear-gradient(white, grey);
 }
 
 #menu.hide {
@@ -95,9 +101,20 @@ ul, li, p, img {
 
 #menu ul li {
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid grey;
     background: #f2dc71;
-    padding: 0.4em;
+    padding: 0.8em;
+    background: linear-gradient(to right, #f2dc71, white, #f2dc71);
+}
+
+#menu a {
+    color: black;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+}
+
+#menu a:hover, #menu a:active {
+    font-size: 1.2em;
 }
 
 @media only screen and (min-width: 768px){
@@ -123,8 +140,18 @@ ul, li, p, img {
     }
 
     #menu ul li:not(:last-child) {
-        border-right: 1px solid black;
+        border-right: 1px solid grey;
         margin-right: 1em;
+    }
+    
+    #menu a:hover, #menu a:active {
+        font-size: 1.1em;
+        background: grey;
+        color: white;
+    }
+    
+    #separator {
+        height: 2em;
     }
 }
 /*Content*/
@@ -157,22 +184,41 @@ section {
 }
 
 #social-links ul li {
+    height: 1.8em;
     display: inline-block;
     margin: 0;
 }
 
 .social-icon {
     width: auto;
-    height: 1.7em;
-    margin: 0 0.3em;
+    height: 100%;
+    margin: 0 0.7em;
 }
 
-#useful-links ul li:before {
-    content: "\003e";
+#social-links a:hover, #social-links a:active {
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* for IE 5-7 */
+}
+
+#useful-links ul li:before { 
+    content: "\003e"; /* Use angle-bracket as bullet */
     font-size: 0.85em;
-    color: lightgrey; 
+    color: grey; 
     vertical-align: top;
     margin-right: 0.7em;
+}
+
+#useful-links li {
+    margin: 0 0 0.3em 0;
+}
+
+#useful-links a {
+    color: grey;
+}
+
+#useful-links a:hover, #useful-links a:active {
+    color: white;
+    background: grey;
 }
 
 @media only screen and (min-width: 768px){
@@ -185,6 +231,20 @@ section {
         padding: 0;
         margin: 0;
     }
+
+    #secondary-content { 
+        width: 30%;
+        float: right
+    }
+
+    #secondary-content section { 
+        border: 1px solid black;
+        padding: 1em;
+        margin: 1em;
+    }
+}
+
+@media only screen and (min-width: 414px) { 
     #main-content img { 
         box-sizing: border-box;
         width: 49%;
@@ -193,24 +253,18 @@ section {
     #main-content img:first-of-type {
         margin-right: 2%;
     }
+}
 
-    #secondary-content { 
-        width: 30%;
-        float: right
-    }
-    #secondary-content section { 
-        border: 1px solid black;
-        padding: 1em;
-        margin: 1em;
-    }
+.clear {
+    clear: both;
 }
 
 /*Footer*/
 
 footer {
-    clear: both;
-    background-color: lightgrey;
+    background-color: grey;
     text-align: center;
+    margin-top: 1em;
 }
 
 footer ul {
@@ -223,9 +277,18 @@ footer ul li {
 }
 
 footer ul li:not(:last-child) {
-    border-right: 1px solid black;
+    border-right: 1px solid white;
     margin-right: 1em;
     padding-right: 1em;
+}
+
+footer a {
+    color: white;
+    letter-spacing: 0.1em;
+}
+
+footer a:hover, footer a:active {
+    color: lightgrey;
 }
 
 
