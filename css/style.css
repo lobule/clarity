@@ -121,6 +121,10 @@ ul, li, p, img {
     #menu-button {
         visibility: hidden;
     }
+    
+    #separator {
+        height: 2em;
+    }
 
     #menu {
         position: absolute;
@@ -148,10 +152,6 @@ ul, li, p, img {
         font-size: 1.1em;
         background: grey;
         color: white;
-    }
-    
-    #separator {
-        height: 2em;
     }
 }
 
@@ -190,15 +190,15 @@ section {
     margin: 0;
 }
 
+#social-links a:hover, #social-links a:active {
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* for IE 5-7 */
+}
+
 .social-icon {
     width: auto;
     height: 100%;
     margin: 0 0.7em;
-}
-
-#social-links a:hover, #social-links a:active {
-    opacity: 0.8;
-    filter: alpha(opacity=80); /* for IE 5-7 */
 }
 
 #useful-links ul li:before { 
